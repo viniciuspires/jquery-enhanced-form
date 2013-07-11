@@ -5,13 +5,27 @@
 	<title>Jquery Enhanced Form</title>
 </head>
 <body>
-	<form data-enhancedform action="echo.php" method="post"
-		data-autosave>
-		<label for="">Name:</label><input type="text" name="name" /> <br />
-		<label for="">E-mail:</label><input type="email" name="email" /> <br />
-		<label for="">Password:</label><input type="password" name="password" /> <br />
-		<button type="submit">Send</button>
-	</form>
+
+	<fieldset>
+		<legend>New Post</legend>
+		<form data-enhancedform action="echo.php" method="post"
+			data-autosave data-autosave-timer="1000">
+
+			<label for="">Title:</label>
+			<input type="text" name="title" /> <br />
+
+			<label for="">Content:</label>
+			<textarea name="content"></textarea> <br />
+
+			<label for="">Category:</label>
+			<select name="category">
+				<option value="1">News</option>
+				<option value="2">Blog posts</option>
+			</select> <br />
+
+			<button type="submit">Send</button>
+		</form>
+	</fieldset>
 
 	<div id="message"></div>
 

@@ -4,10 +4,11 @@
             var $this = $(this);
 
             var settings = $.extend({
-                waiting:function() {},
+                waiting:function(){},
                 done:function(data) {},
                 error:function() {},
                 after:function(jqXhr, textStatus) {},
+                accepts:'json',
                 status: {
                     // Examples
                     403:function(){},
@@ -18,48 +19,41 @@
 
             $this.submit(function(e){
                 e.preventDefault();
-
                 var $this = $(this);
 
-                var action  = $this.attr('action');
-                var method  = $this.attr('method');
-                var accepts = $this.data('accepts');
-
-                var waiting = settings.waiting;
-                if ( $this.data('waiting') != undefined ) {
-                    waiting = eval($this.data('waiting'));
+                if ( typeof settings.done == 'string' ) {
+                    settings.done = eval(settings.done);
                 }
 
-                var callback = settings.done;
-                if ( $this.data('done') != undefined ) {
-                    callback = eval( $this.data('done') );
+                if ( typeof settings.waiting == 'string' ) {
+                    settings.waiting = eval(settings.waiting);
                 }
                 
                 var formData = $this.serialize();
 
                 $.ajax({
-                    url:action,
-                    type:method,
-                    dataType:accepts,
-                    data:formData,
-                    success:callback,
-                    beforeSend:waiting,
-                    complete:settings.after,
-                    statusCode:settings.status
+                    url:        $this.attr('action'),
+                    type:       $this.attr('method'),
+                    dataType:   settings.accepts,
+                    data:       formData,
+                    success:    settings.done,
+                    beforeSend: settings.waiting,
+                    complete:   settings.after,
+                    statusCode: settings.status
                 });
 
             });
 
             if ( $this.data('autosave') != undefined ) {
-                var callback = function(e){
+                $this.on('change keyup', function(e){
                     var id = $this.data('autosaveId');
 
                     if ( id != "" || id != undefined ) {
                         window.clearTimeout(id);
                     }
 
-                    var timeout = $this.data('autosaveTimer');
-                    if ( timeout == null || timeout == "" ) {
+                    var timeout = parseInt( $this.data('autosaveTimer') );
+                    if ( timeout == null || timeout == 0 ) {
                         timeout = 2000;
                     }
 
@@ -68,10 +62,8 @@
                     }, timeout, $this);
 
                     $this.data('autosaveId', newId);
-                };
-
-                $this.on('change keyup', callback);
-            }            
+                });
+            }
         });
     };
 }(jQuery));
