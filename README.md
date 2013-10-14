@@ -92,7 +92,7 @@ status: {
 }
 ```
 
-Each one of the following overrides the last one:
+The option override order is the following (each one overrides the last one):
 
 1. Use standard options
 2. Use data-* attributes defined for this form
