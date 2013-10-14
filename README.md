@@ -6,7 +6,7 @@ A clean form plugin for rapid ajax form prototyping and more.
 Installing
 ----------
 
-The only dependency is jQuery. You just have to download it, and use it.
+The only dependency is jQuery. You just have to download it and use it.
 
 ```html
 <script src="jquery.js"></script>
