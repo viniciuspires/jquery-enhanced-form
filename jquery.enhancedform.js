@@ -1,3 +1,12 @@
+/**
+ * A clean form plugin for rapid ajax form prototyping and more.
+ * 
+ * If you find any bug, or if you have questions or suggestions,
+ * please submit it on https://github.com/viniciuspires/jquery-enhanced-form/issues.
+ *
+ * @author Vinicius Pires
+ * @url https://github.com/viniciuspires/enhancedform
+ */
 ;(function($){
     $.fn.enhancedform = function(options) {
         return this.each(function(){
