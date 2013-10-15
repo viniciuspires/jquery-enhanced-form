@@ -6,7 +6,7 @@ A clean form plugin for rapid ajax form prototyping and more.
 Installing
 ----------
 
-The only dependency is jQuery. You just have to download it, and use it.
+The only dependency is jQuery. You just have to download it and use it.
 
 ```html
 <script src="jquery.js"></script>
@@ -92,7 +92,7 @@ status: {
 }
 ```
 
-Each one of the following overrides the last one:
+The option override order is the following (each one overrides the last one):
 
 1. Use standard options
 2. Use data-* attributes defined for this form
@@ -101,7 +101,7 @@ Each one of the following overrides the last one:
 Auto-saved forms
 ----------------
 
-If you have really huge forms, or just a form that a user would spend a lot of time typing and reviewing (and losing data is not an option), you should try adding the `data-autosave` attribute: the form will wait until the user stops typing and then save it automatically.
+If you have really huge forms, or just a form that a user would spend a lot of time typing and reviewing (and losing data is not an option), you should try adding the `data-autosave` attribute: the form will wait until the user stops typing and saves it automatically.
 
 The default timer is 2000 miliseconds (2 seconds), but this setting can be overriden by passing a `data-autosave-timer="1000"` attribute, specifying the time you want in miliseconds.
 
