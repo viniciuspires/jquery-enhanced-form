@@ -1,10 +1,10 @@
 jQuery Enhanced Form
 ====================
 
-A clean form plugin for rapid ajax form prototyping and more.
+A clean jQuery plugin for rapid ajax form prototyping and more.
 
-Installing
-----------
+Manual Installation
+-------------------
 
 The only dependency is jQuery. You just have to download it and use it.
 
@@ -13,7 +13,33 @@ The only dependency is jQuery. You just have to download it and use it.
 <script src="jquery.enhancedform.js"></script>
 ```
 
-jQuery version tested: v1.10.1
+Latest jQuery version tested: `v1.10.1`
+
+Bower Installation
+-------------------
+
+Our package is not officially registered in bower yet, but since it's on Github, you can still install it with bower and maintain the dependency on your `bower.json`.
+
+If you just want to download it and use it without declaring a dependency:
+
+```console
+bower install viniciuspires/jquery-enhanced-form
+```
+
+If you want bower to automatically add this dependency to your `bower.json`, just add `--save`:
+
+```console
+bower install --save viniciuspires/jquery-enhanced-form
+```
+
+Or you can manually edit your `bower.json` to add the dependency:
+
+```json
+"dependencies": {
+    "jquery": "~1.10.1",
+    "jquery-enhanced-form": "viniciuspires/jquery-enhanced-form"
+}
+```
 
 Basic Usage
 -----------
@@ -65,10 +91,31 @@ $('[data-enhancedform]').enhancedform();
 Two things to notice here:
 
 1. Don't worry with multiple forms in a page. The plugin will just take care of all the rest.
-2. Enhanced form __mimics__ what an ajax form would look like if it was a native implementation in HTML, using its default `action` and `method` attributes, you just have to worry about the HTML.
+2. Enhanced Form __mimics__ what an ajax form would look like if it was a native implementation in HTML, using its default `action` and `method` attributes, you just have to worry about the HTML.
 
 Options
 -------
+
+The main options for Enhanced Form are `action` and `method` attributes. If you have, for example, a URL that receives the ID of the object in a PUT operation, you could just do the following:
+
+```html
+<form data-enhancedform action="/user/666" method="put">
+    ...
+</form>
+```
+
+The same would happen with a DELETE operation and __any__ other method you'd like to use, and with the URL pattern you use:
+
+```html
+<form data-enhancedform action="/user/666" method="delete">
+    Are you sure you want to delete user 666?
+</form>
+```
+```html
+<form data-enhancedform action="user.jsp?id=666" method="delete">
+    Are you sure you want to delete user 666?
+</form>
+```
 
 You can pass any argument of the following with `data-*` attributes as you would in `data-accepts="xml"`.
 
