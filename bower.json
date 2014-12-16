@@ -1,0 +1,33 @@
+{
+  "name": "jquery-enhanced-form",
+  "version": "0.1",
+  "homepage": "https://github.com/viniciuspires/jquery-enhanced-form",
+  "authors": [
+    "Vinicius da Costa Pires <vinicius.costa.pires@gmail.com>"
+  ],
+  "description": "A clean jQuery plugin for rapid ajax form prototyping and more.",
+  "main": "jquery.enhancedform.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "ajax",
+    "form",
+    "autosave",
+    "rest",
+    "semantic",
+    "html5"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.10.1"
+  }
+}
