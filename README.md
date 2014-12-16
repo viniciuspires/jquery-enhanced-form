@@ -3,6 +3,29 @@ jQuery Enhanced Form
 
 A clean jQuery plugin for rapid ajax form prototyping and more.
 
+Bower Installation
+-------------------
+
+To install without declaring a dependency:
+
+```console
+bower install jquery-enhanced-form
+```
+
+If you want Bower to automatically add this dependency to your `bower.json`, just add `--save`:
+
+```console
+bower install --save jquery-enhanced-form
+```
+
+Or you can manually edit your `bower.json` to add the dependency:
+
+```json
+"dependencies": {
+    "jquery-enhanced-form": "*"
+}
+```
+
 Manual Installation
 -------------------
 
@@ -15,31 +38,6 @@ The only dependency is jQuery. You just have to download it and use it.
 
 Latest jQuery version tested: `v1.10.1`
 
-Bower Installation
--------------------
-
-Our package is not officially registered in bower yet, but since it's on Github, you can still install it with bower and maintain the dependency on your `bower.json`.
-
-If you just want to download it and use it without declaring a dependency:
-
-```console
-bower install viniciuspires/jquery-enhanced-form
-```
-
-If you want bower to automatically add this dependency to your `bower.json`, just add `--save`:
-
-```console
-bower install --save viniciuspires/jquery-enhanced-form
-```
-
-Or you can manually edit your `bower.json` to add the dependency:
-
-```json
-"dependencies": {
-    "jquery": "~1.10.1",
-    "jquery-enhanced-form": "viniciuspires/jquery-enhanced-form"
-}
-```
 
 Basic Usage
 -----------
